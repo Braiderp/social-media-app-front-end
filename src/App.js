@@ -16,7 +16,7 @@ import { AuthProvider } from "./context/auth";
 import SinglePost from "./pages/SinglePost";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:5000"
+  uri: process.env.NODE_ENV == "dev" ? "http://localhost:5000" : "/graphql"
 });
 
 const authLink = setContext(() => {
