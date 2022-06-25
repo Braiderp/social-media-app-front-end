@@ -16,7 +16,10 @@ import { AuthProvider } from "./context/auth";
 import SinglePost from "./pages/SinglePost";
 
 const httpLink = createHttpLink({
-  uri: process.env.NODE_ENV == "dev" ? "http://localhost:5000" : "/graphql"
+  uri:
+    process.env.NODE_ENV == "dev"
+      ? "http://localhost:5000"
+      : "https://pacific-waters-91817.herokuapp.com/"
 });
 
 const authLink = setContext(() => {
